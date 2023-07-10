@@ -1,7 +1,36 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import React from 'react'
 
+import { Box } from '@chakra-ui/react'
+import { AppShell, Sidebar, SidebarSection, NavItem } from '@saas-ui/react'
+
+export default function Home() {
+  return <AppShell
+      height="$100vh"
+      navbar={
+        <Box as="header" borderBottomWidth="1px" py="2" px="4">
+          <label>Hello!</label>
+        </Box>
+      }
+      sidebar={
+        <Sidebar color="red">
+          <SidebarSection>
+            <NavItem>Home</NavItem>
+            <NavItem>Settings</NavItem>
+          </SidebarSection>
+        </Sidebar>
+      }
+    >
+    <Box as="main" flex="1" py="2" px="4" overflowY="auto">
+      Your application content
+    </Box>
+    <link rel="stylesheet" href="/styles.css" />
+</AppShell>;
+};
+
+/*
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -67,3 +96,5 @@ export default function Home() {
     </div>
   )
 }
+
+*/
